@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_233018) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_234116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_233018) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "church_number"
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.bigint "neighborhood_id", null: false
+    t.bigint "street_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_communities_on_city_id"
+    t.index ["neighborhood_id"], name: "index_communities_on_neighborhood_id"
+    t.index ["state_id"], name: "index_communities_on_state_id"
+    t.index ["street_id"], name: "index_communities_on_street_id"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -57,6 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_233018) do
   end
 
   add_foreign_key "cities", "states"
+  add_foreign_key "communities", "cities"
+  add_foreign_key "communities", "neighborhoods"
+  add_foreign_key "communities", "states"
+  add_foreign_key "communities", "streets"
   add_foreign_key "neighborhoods", "cities"
   add_foreign_key "neighborhoods", "states"
   add_foreign_key "streets", "cities"

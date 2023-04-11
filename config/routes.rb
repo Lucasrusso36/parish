@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :communities
   # resources :sexual_orientations
   # resources :streets
   # resources :neighborhoods
