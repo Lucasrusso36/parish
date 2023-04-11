@@ -1,8 +1,7 @@
-class Neighborhood < ApplicationRecord
+class Street < ApplicationRecord
   belongs_to :state
   belongs_to :city
-
-  has_many :streets
+  belongs_to :neighborhood
 
   validates :name, presence: true
 end

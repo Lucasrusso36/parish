@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :streets
   resources :neighborhoods
   resources :cities
   resources :states
