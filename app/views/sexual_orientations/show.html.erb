@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sexual_orientation %>
+
+<div>
+  <%= link_to "Edit this sexual orientation", edit_sexual_orientation_path(@sexual_orientation) %> |
+  <%= link_to "Back to sexual orientations", sexual_orientations_path %>
+
+  <%= button_to "Destroy this sexual orientation", @sexual_orientation, method: :delete %>
+</div>
