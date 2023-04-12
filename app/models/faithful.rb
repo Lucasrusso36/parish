@@ -7,6 +7,8 @@ class Faithful < ApplicationRecord
   belongs_to :community
   belongs_to :relationship
 
+  has_many :additional_informations
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true

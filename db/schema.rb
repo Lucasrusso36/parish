@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_12_002853) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_12_002241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,34 +36,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_002853) do
     t.index ["neighborhood_id"], name: "index_communities_on_neighborhood_id"
     t.index ["state_id"], name: "index_communities_on_state_id"
     t.index ["street_id"], name: "index_communities_on_street_id"
-  end
-
-  create_table "faithfuls", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "function"
-    t.string "phone_number"
-    t.date "date_of_birth"
-    t.date "wedding_date"
-    t.boolean "children"
-    t.string "house_number"
-    t.string "complement"
-    t.bigint "state_id", null: false
-    t.bigint "city_id", null: false
-    t.bigint "neighborhood_id", null: false
-    t.bigint "street_id", null: false
-    t.bigint "sexual_orientation_id", null: false
-    t.bigint "community_id", null: false
-    t.bigint "relationship_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_faithfuls_on_city_id"
-    t.index ["community_id"], name: "index_faithfuls_on_community_id"
-    t.index ["neighborhood_id"], name: "index_faithfuls_on_neighborhood_id"
-    t.index ["relationship_id"], name: "index_faithfuls_on_relationship_id"
-    t.index ["sexual_orientation_id"], name: "index_faithfuls_on_sexual_orientation_id"
-    t.index ["state_id"], name: "index_faithfuls_on_state_id"
-    t.index ["street_id"], name: "index_faithfuls_on_street_id"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -111,13 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_002853) do
   add_foreign_key "communities", "neighborhoods"
   add_foreign_key "communities", "states"
   add_foreign_key "communities", "streets"
-  add_foreign_key "faithfuls", "cities"
-  add_foreign_key "faithfuls", "communities"
-  add_foreign_key "faithfuls", "neighborhoods"
-  add_foreign_key "faithfuls", "relationships"
-  add_foreign_key "faithfuls", "sexual_orientations"
-  add_foreign_key "faithfuls", "states"
-  add_foreign_key "faithfuls", "streets"
   add_foreign_key "neighborhoods", "cities"
   add_foreign_key "neighborhoods", "states"
   add_foreign_key "streets", "cities"

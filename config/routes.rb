@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :additional_informations
   resources :faithfuls
   resources :relationships
   resources :communities

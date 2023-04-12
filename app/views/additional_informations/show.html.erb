@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @additional_information %>
+
+<div>
+  <%= link_to "Edit this additional information", edit_additional_information_path(@additional_information) %> |
+  <%= link_to "Back to additional information", additional_informations_path %>
+
+  <%= button_to "Destroy this additional information", @additional_information, method: :delete %>
+</div>

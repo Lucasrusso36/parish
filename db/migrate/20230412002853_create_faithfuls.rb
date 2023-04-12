@@ -7,7 +7,7 @@ class CreateFaithfuls < ActiveRecord::Migration[7.0]
       t.string :phone_number
       t.date :date_of_birth
       t.date :wedding_date
-      t.boolean :children
+      t.boolean :children, default: false
       t.string :house_number
       t.string :complement
       t.references :state, null: false, foreign_key: true
