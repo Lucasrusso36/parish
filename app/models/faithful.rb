@@ -1,11 +1,11 @@
 class Faithful < ApplicationRecord
+  belongs_to :community
+  belongs_to :sexual_orientation
+  belongs_to :relationship
   belongs_to :state
   belongs_to :city
   belongs_to :neighborhood
   belongs_to :street
-  belongs_to :sexual_orientation
-  belongs_to :community
-  belongs_to :relationship
 
   has_many :additional_informations
 

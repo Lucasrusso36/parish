@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :community_id, style: "display: block" %>
+    <%= form.text_field :community_id %>
+  </div>
+
+  <div>
     <%= form.label :phone_number, style: "display: block" %>
     <%= form.text_field :phone_number %>
   </div>
@@ -37,6 +42,16 @@
   </div>
 
   <div>
+    <%= form.label :sexual_orientation_id, style: "display: block" %>
+    <%= form.text_field :sexual_orientation_id %>
+  </div>
+
+  <div>
+    <%= form.label :relationship_id, style: "display: block" %>
+    <%= form.text_field :relationship_id %>
+  </div>
+
+  <div>
     <%= form.label :wedding_date, style: "display: block" %>
     <%= form.date_field :wedding_date %>
   </div>
@@ -44,16 +59,6 @@
   <div>
     <%= form.label :children, style: "display: block" %>
     <%= form.check_box :children %>
-  </div>
-
-  <div>
-    <%= form.label :house_number, style: "display: block" %>
-    <%= form.text_field :house_number %>
-  </div>
-
-  <div>
-    <%= form.label :complement, style: "display: block" %>
-    <%= form.text_field :complement %>
   </div>
 
   <div>
@@ -77,18 +82,13 @@
   </div>
 
   <div>
-    <%= form.label :sexual_orientation_id, style: "display: block" %>
-    <%= form.text_field :sexual_orientation_id %>
+    <%= form.label :house_number, style: "display: block" %>
+    <%= form.text_field :house_number %>
   </div>
 
   <div>
-    <%= form.label :community_id, style: "display: block" %>
-    <%= form.text_field :community_id %>
-  </div>
-
-  <div>
-    <%= form.label :relationship_id, style: "display: block" %>
-    <%= form.text_field :relationship_id %>
+    <%= form.label :complement, style: "display: block" %>
+    <%= form.text_field :complement %>
   </div>
 
   <div>
