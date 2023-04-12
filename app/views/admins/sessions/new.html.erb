@@ -1,26 +1,136 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paróquia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			background-color: #fff;
+			font-family: Arial, sans-serif;
+		}
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+		.container {
+			max-width: 400px;
+			margin: 200px auto 0;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2); 
+			text-align: center;
+		}
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+		h2 {
+			margin-top: 0;
+			font-size: 32px;
+			font-weight: bold;
+			color: #333;
+		}
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+		.field {
+			margin-top: 20px;
+			text-align: left;
+		}
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+		.field label {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 14px;
+			font-weight: bold;
+			color: #333;
+		}
 
-<%= render "admins/shared/links" %>
+		.field input[type="email"],
+		.field input[type="password"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px;
+			color: #333;
+			background-color: #fff;
+			box-sizing: border-box;
+		}
+
+		.remember {
+			display: flex;
+			align-items: center;
+			margin-top: 20px;
+			text-align: left;
+			font-size: 14px;
+			color: #333;
+		}
+
+		.remember input[type="checkbox"] {
+			margin-right: 10px;
+		}
+
+		.actions {
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		.actions input[type="submit"] {
+			padding: 10px 20px;
+			background-color: #408ccf;
+			border: none;
+			border-radius: 5px;
+			font-size: 14px;
+			font-weight: bold;
+			color: #fff;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		.actions input[type="submit"]:hover {
+			background-color: #66A3D9;
+		}
+
+		@media screen and (max-width: 480px) {
+			.container {
+				max-width: 100%;
+				border-radius: 0;
+				box-shadow: none;
+			}
+		}
+    .logo {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    height: auto;
+    margin-bottom: 20px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="<%= asset_path('paroquia.webp') %>" alt="Logo" class="logo">
+		<%# <h3>Paróquia</h3> %>
+
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="field">
+				<%= f.label :email %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+			</div>
+
+      <div class="field">
+				<%= f.label "Senha" %><br />
+				<%= f.password_field :password, autocomplete: "current-password" %>
+			</div>
+
+			<% if devise_mapping.rememberable? %>
+				<div class="remember">
+					<%= f.check_box :remember_me %>
+					<%= f.label "Lembrar" %>
+				</div>
+			<% end %>
+
+			<div class="actions">
+				<%= f.submit "Entrar" %>
+			</div>
+		<% end %>
+
+		<%#= render "admins/shared/links" %>
+	</div>
+</body>
+</html>
