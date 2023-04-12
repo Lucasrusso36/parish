@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_relationship, only: %i[ show edit update destroy ]
 
   # GET /relationships or /relationships.json

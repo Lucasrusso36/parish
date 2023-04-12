@@ -1,4 +1,5 @@
 class StreetsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_street, only: %i[ show edit update destroy ]
 
   # GET /streets or /streets.json

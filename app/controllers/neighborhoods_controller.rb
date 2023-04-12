@@ -1,4 +1,5 @@
 class NeighborhoodsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_neighborhood, only: %i[ show edit update destroy ]
 
   # GET /neighborhoods or /neighborhoods.json

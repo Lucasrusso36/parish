@@ -1,4 +1,5 @@
 class AdditionalInformationsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_additional_information, only: %i[ show edit update destroy ]
 
   # GET /additional_informations or /additional_informations.json

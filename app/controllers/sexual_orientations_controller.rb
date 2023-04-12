@@ -1,4 +1,5 @@
 class SexualOrientationsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_sexual_orientation, only: %i[ show edit update destroy ]
 
   # GET /sexual_orientations or /sexual_orientations.json
