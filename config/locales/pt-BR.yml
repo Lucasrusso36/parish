@@ -82,7 +82,7 @@ pt-BR:
     loading: "Carregando …"
     toggle_navigation: Alternar navegação
     home:
-      name: Página inicial
+      name: Página Inicial
     pagination:
       previous: "&laquo; Anterior"
       next: Próximo &raquo;
@@ -135,7 +135,7 @@ pt-BR:
         breadcrumb: Lista de %{model_label_plural}
       show:
         title: Mostra
-        menu: Mostrar
+        menu: Visualizar
         breadcrumb: Mostrar "%{object_label}"
       show_in_app:
         menu: Mostrar no app

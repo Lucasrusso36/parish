@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   # resources :cities
   # resources :states
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    
+    root "rails_admin/main#dashboard"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   end
   # Defines the root path route ("/")
-  # root "articles#index"
 end
