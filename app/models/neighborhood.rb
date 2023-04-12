@@ -4,6 +4,7 @@ class Neighborhood < ApplicationRecord
 
   has_many :streets
   has_many :communities
+  has_many :faithfuls
 
   validates :name, presence: true
 end

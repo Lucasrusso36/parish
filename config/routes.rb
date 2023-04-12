@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :faithfuls
   resources :relationships
   resources :communities
   # resources :sexual_orientations
