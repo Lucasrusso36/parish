@@ -39,6 +39,75 @@ pt-BR:
       street: Ruas
       faithful: Fiéis
     attributes:
+      additional_information: 
+        information: Informação
+        faithful: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      admin:
+        password: Senha
+        password_confirmation: Confirmar senha
+        reset_password_sent_at: Redefinir senha enviado em
+        remember_created_at: Lembre-se criado em
+        created_at: Criado em
+        updated_at: Atualizado em
+      city:
+        name: Nome
+        state: Estado
+        neighborhoods: Bairro
+        streets: Rua
+        communities: Comunidade
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      community:
+        name: Nome
+        phone_number: Telefone
+        church_number: Nº da Igreja
+        state: Estado
+        city: Cidade
+        neighborhood: Bairro
+        street: Rua
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      neighborhood:
+        name: Nome
+        state: Estado
+        city: Cidade
+        streets: Rua
+        communities: Comunidade
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      relationship:
+        name: Nome
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      sexual_orientation:
+        name: Nome
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      state:
+        name: Nome
+        cities: Cidade
+        neighborhoods: Bairro
+        streets: Rua
+        communities: Comunidade
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
+      street:
+        name: Nome
+        state: Estado
+        city: Cidade
+        neighborhood: Bairro
+        communities: Comunidade
+        faithfuls: Fiel
+        created_at: Criado em
+        updated_at: Atualizado em
       faithful:
         first_name: Nome
         last_name: Sobrenome
