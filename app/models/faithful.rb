@@ -13,4 +13,8 @@ class Faithful < ApplicationRecord
   validates :last_name, presence: true
   validates :phone_number, presence: true
   validates :date_of_birth, presence: true
+
+  # def test 
+  #   Faithful.where(children: true).count
+  # end
 end

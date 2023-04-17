@@ -233,7 +233,7 @@ pt-BR:
         bulk_link: Deletar %{model_label_plural} selecionado
       export:
         title: Exportar %{model_label_plural}
-        menu: Exportar
+        menu: Exportar CSV
         breadcrumb: Exportar
         link: Exportar %{model_label_plural}
         bulk_link: Exportar %{model_label_plural} selecionados
