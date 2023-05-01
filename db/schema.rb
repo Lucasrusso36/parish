@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_12_010814) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_22_172947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "additional_address_informations", force: :cascade do |t|
+    t.string "number"
+    t.string "complement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "additional_informations", force: :cascade do |t|
     t.text "information"
@@ -20,6 +27,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_010814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["faithful_id"], name: "index_additional_informations_on_faithful_id"
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.bigint "neighborhood_id", null: false
+    t.bigint "street_id", null: false
+    t.bigint "faithful_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_addresses_on_city_id"
+    t.index ["faithful_id"], name: "index_addresses_on_faithful_id"
+    t.index ["neighborhood_id"], name: "index_addresses_on_neighborhood_id"
+    t.index ["state_id"], name: "index_addresses_on_state_id"
+    t.index ["street_id"], name: "index_addresses_on_street_id"
   end
 
   create_table "admins", force: :cascade do |t|
@@ -64,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_010814) do
     t.string "function"
     t.bigint "community_id", null: false
     t.string "phone_number"
-    t.date "date_of_birth"
+    t.date "birthdate"
     t.bigint "sexual_orientation_id", null: false
     t.bigint "relationship_id", null: false
     t.date "wedding_date"
@@ -77,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_010814) do
     t.string "complement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sexual_orientation"
     t.index ["city_id"], name: "index_faithfuls_on_city_id"
     t.index ["community_id"], name: "index_faithfuls_on_community_id"
     t.index ["neighborhood_id"], name: "index_faithfuls_on_neighborhood_id"
@@ -127,6 +150,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_010814) do
   end
 
   add_foreign_key "additional_informations", "faithfuls"
+  add_foreign_key "addresses", "cities"
+  add_foreign_key "addresses", "faithfuls"
+  add_foreign_key "addresses", "neighborhoods"
+  add_foreign_key "addresses", "states"
+  add_foreign_key "addresses", "streets"
   add_foreign_key "cities", "states"
   add_foreign_key "communities", "cities"
   add_foreign_key "communities", "neighborhoods"
